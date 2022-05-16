@@ -657,17 +657,14 @@
 										<td colspan="1" style="border: 1px solid #ccc;padding: 12px 0 !important;">${d["soDienThoai"]}</td>
 										<td colspan="1" style="border: 1px solid #ccc;padding: 12px 0 !important;">${d["diaChi"]}</td>`)
 					
-				html += `<td colspan="1" style="border: 1px solid #ccc;padding: 12px 0 !important;">${item['NgayThanhToan']}</td>`
-				
 				fetch(`http://localhost:54243/sanphams/search?keyword=${item.MaSanPham}`)
 					.then(response => response.json())
   					.then(d => html +=  `<td colspan="1" style="border: 1px solid #ccc;padding: 12px 0 !important;">${d["tenSanPham"].split('|')[0]}</td>`)
 
-				fetch(`http://localhost:54243/chitiethoadons?maChiTietHoaDon=${item.MaChiTietHoaDon}`)
-					.then(response => response.json())
-  					.then(d => html +=  `<td colspan="1" style="border: 1px solid #ccc;padding: 12px 0 !important;">${d['soLuong']}</td>
-										<td colspan="1" style="border: 1px solid #ccc;padding: 12px 0 !important;">${changeMoney(String(d['donGia']))}</td>
-									</tr>`)
+				html += `<td colspan="1" style="border: 1px solid #ccc;padding: 12px 0 !important;">${item['SoLuong']}</td>
+						<td colspan="1" style="border: 1px solid #ccc;padding: 12px 0 !important;">${item['NgayThanhToan']}</td>
+						<td colspan="1" style="border: 1px solid #ccc;padding: 12px 0 !important;">${changeMoney(String(item['DonGia']))}</td>
+					</tr>`
 			})
 			table.innerHTML = html.join('')
 		}
