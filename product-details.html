@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<!-- Meta Tag -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name='copyright' content=''>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./fonts/New folder/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Title Tag  -->
+    <title>Bảo Bình Store</title>
+	<link rel="icon" type="image/png" href="images/symbol2.png">
+	<!-- Favicon -->
+	<!-- Web Font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+	
+	<!-- StyleSheet -->
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.min.css">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<!-- Fancybox -->
+	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
+	<!-- Themify Icons -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+	<!-- Nice Select CSS -->
+    <link rel="stylesheet" href="css/niceselect.css">
+	<!-- Animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+	<!-- Flex Slider CSS -->
+    <link rel="stylesheet" href="css/flex-slider.min.css">
+	<!-- Owl Carousel -->
+    <link rel="stylesheet" href="css/owl-carousel.css">
+	<!-- Slicknav -->
+    <link rel="stylesheet" href="css/slicknav.min.css">
+	
+	<!-- Eshop StyleSheet -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+	<style>
+        .icon-star-full::after{
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            stroke-width: 0;
+            stroke: currentColor;
+            fill: currentColor;
+            background-color: rgb(240, 179, 13);
+        }
+
+        .imageS{
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+
+        .imageSmall:hover{
+            transition: .3s;
+            transform: scale(1.15);
+        }
+
+        .enable{
+            border-color: rgb(0, 100, 0);
+        }
+
+        .hoverBox{
+            border-radius: 4px;
+            border: 2px solid #ccc;
+            padding: 0 10px;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            box-sizing: unset;
+            transition: .3s;
+        }
+
+        .hoverBox:not(.click):hover{
+            border-color: rgb(255, 47, 47);
+        }
+
+        .click{
+            border-color: rgb(1, 94, 1);
+        }
+
+        .btnCart{
+            padding: 5px;
+            background-color: rgb(255, 47, 47);
+            border-radius: 5px;
+            transition: .3s;
+            opacity: 0.8;
+            cursor: pointer;
+			display: inherit;
+            margin-top: 10px;
+        }
+
+        .btnCart:hover{
+            opacity: 1;
+        }
+
+        .btnCart1{
+            padding: 10px;
+            background-color: rgb(0, 146, 61);
+            border-radius: 5px;
+            transition: .3s;
+            opacity: 0.8;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 49%;
+        }
+
+        .btnCart1:hover{
+            opacity: 1;
+        }
+
+		.properties{
+			padding: 30px 15px;
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 10px;
+			position: relative;
+			max-height: 770px;
+			overflow: hidden;
+			transition: .4s;
+		}
+
+		.more{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			text-align: center;
+			font-size: 15px;
+			font-weight: 600;
+			color: #00483d;
+			text-transform: uppercase;
+			padding-bottom: 0;
+			background-color: #fff;
+		}
+
+		.hidden{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: none;
+			right: 0;
+			text-align: center;
+			font-size: 15px;
+			font-weight: 600;
+			color: #00483d;
+			text-transform: uppercase;
+			padding-bottom: 0;
+			background-color: #fff;
+		}
+
+		.propertiess{
+			padding: 30px 15px;
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 10px;
+			position: relative;
+			transition: .4s;
+			/* max-height: 770px; */
+		}
+
+		.modal__properties{
+			position: fixed;
+			inset: 0px;
+			background-color: rgba(0,0,0,0.6);
+			z-index: 1000;
+			display: flex;
+			justify-content: center;
+			visibility: hidden;
+			overflow: auto;
+			opacity: 0;
+			transition: .4s;
+		}
+
+		.modal__properties::-webkit-scrollbar{
+			display: none;
+		}
+
+		.modal__properties__info{
+			width: 750px;
+			max-width: 100%;
+			background-color: #fff;
+			margin-top: 30px;
+		}
+
+		.modal__properties__info__title{
+			background-color: #009c85;
+			text-align: center;
+			font-size: 16px;
+			line-height: 50px;
+			position: relative;
+			padding: 8px 0;
+			font-weight: 600;
+		}
+
+		.modal__properties__info__btn{
+			cursor: pointer;
+			line-height: 50px;
+			color: rgb(207, 1, 1);
+			padding: 8px;
+			position: absolute;
+			top: 0;
+			right: 10px;
+			font-weight: 600;
+			line-height: normal;
+			font-size: 20px;
+		}
+
+		.modal__properties__info__content{
+			display: flex;
+			background-color: rgb(226, 226, 226);
+			align-items: center;
+			border-bottom: 1px solid #ccc;
+		}
+		
+		.modal__properties__info__content__title{
+			width: 33.33%;
+			color: black;
+			font-size: 13px;
+			font-weight: 600;
+			text-align: left;
+			line-height: 30px;
+			padding: 5px 12px;
+			height: 100%;
+		}
+
+		.modal__properties__info__content__box{
+			width: calc(100% - 33.33%);
+			height: 100%;
+			color: black;
+			font-size: 13px;
+			background-color: #fff;
+			line-height: 30px;
+			padding: 5px 12px;
+			text-align: left;
+		}
+    </style>
+</head>
+<body class="js">
+	<div class="modal__properties">
+		<div class="modal__properties__info">
+			<div class="modal__properties__info__title">
+				<p style="color: #fff;line-height: 30px;">Màn hình </p>
+				<div class="modal__properties__info__btn">X</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Công nghệ màn hình</div>
+				<div class="modal__properties__info__content__box">OLED</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Độ phân giải</div>
+				<div class="modal__properties__info__content__box">Full HD+ (1080 x 2340 Pixels)</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Độ sáng tối đa</div>
+				<div class="modal__properties__info__content__box">1200 nits</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Mặt kính cảm ứng</div>
+				<div class="modal__properties__info__content__box">Kính cường lực Ceramic Shield</div>
+			</div>
+			<div class="modal__properties__info__title">
+				<p style="color: #fff;line-height: 30px;">Camera sau</p>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Độ phân giải</div>
+				<div class="modal__properties__info__content__box">2 camera 12 MP</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Quay phim</div>
+				<div class="modal__properties__info__content__box">
+					<ul>
+						<li>- 4K 2160p@24fps</li>
+						<li>- 4K 2160p@30fps</li>
+						<li>- 4K 2160p@60fps</li>
+						<li>- FullHD 1080p@240fps</li>
+						<li>- FullHD 1080p@120fps</li>
+						<li>- FullHD 1080p@60fps</li>
+						<li>- FullHD 1080p@30fps</li>
+						<li>- HD 720p@30fps</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Tính năng</div>
+				<div class="modal__properties__info__content__box">
+					<ul>
+						<li>- Ban đêm (Night Mode)</li>
+						<li>- Trôi nhanh thời gian (Time Lapse)</li>
+						<li>- Quay chậm (Slow Motion)</li>
+						<li>- Xóa phông</li>
+						<li>- Zoom quang học</li>
+						<li>- Chạm lấy nét</li>
+						<li>- Toàn cảnh (Panorama)</li>
+						<li>- Chống rung quang học (OIS)</li>
+						<li>- Tự động lấy nét (AF)</li>
+						<li>- Nhận diện khuôn mặt</li>
+						<li>- HDR</li>
+						<li>- Dolby Vision HDR</li>
+						<li>- Zoom kỹ thuật số</li>
+						<li>- Góc rộng (Wide)</li>
+						<li>- Góc siêu rộng (Ultrawide)</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="modal__properties__info__title">
+				<p style="color: #fff;line-height: 30px;">Camera trước </p>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Độ phân giải</div>
+				<div class="modal__properties__info__content__box">12 MP</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Tính năng</div>
+				<div class="modal__properties__info__content__box">
+					<ul>
+						<li>- Xóa phông</li>
+						<li>- Quay video 4K</li>
+						<li>- Quay video HD</li>
+						<li>- Nhận diện khuôn mặt</li>
+						<li>- Quay video Full HD</li>
+						<li>- Tự động lấy nét (AF)</li>
+						<li>- HDR</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="modal__properties__info__title">
+				<p style="color: #fff;line-height: 30px;">Hệ điều hành & CPU </p>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Hệ điều hành</div>
+				<div class="modal__properties__info__content__box">iOS 15</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Chip xử lý (CPU)</div>
+				<div class="modal__properties__info__content__box">	Apple A15 Bionic 6 nhân</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Tốc độ CPU	</div>
+				<div class="modal__properties__info__content__box">Đang cập nhật</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Chip đồ họa (GPU)</div>
+				<div class="modal__properties__info__content__box">Apple GPU 4 nhân</div>
+			</div>
+
+			<div class="modal__properties__info__title">
+				<p style="color: #fff;line-height: 30px;">Bộ nhớ & Lưu trữ </p>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">RAM</div>
+				<div class="modal__properties__info__content__box">4 GB</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Bộ nhớ trong (ROM)	</div>
+				<div class="modal__properties__info__content__box">512 GB</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Bộ nhớ còn lại (khả dụng)</div>
+				<div class="modal__properties__info__content__box">497 GB</div>
+			</div>
+
+			<div class="modal__properties__info__title">
+				<p style="color: #fff;line-height: 30px;">Kết nối </p>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Mạng di động</div>
+				<div class="modal__properties__info__content__box">Hỗ trợ 5G</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Số khe sim</div>
+				<div class="modal__properties__info__content__box">	1 Nano SIM & 1 eSIM</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Wifi</div>
+				<div class="modal__properties__info__content__box">
+					<ul>
+						<li>- Dual-band (2.4 GHz/5 GHz)</li>
+						<li>- Wi-Fi 802.11 a/b/g/n/ac/ax</li>
+						<li>- Wi-Fi MIMO</li>
+						<li>- Wi-Fi hotspot</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">GPS</div>
+				<div class="modal__properties__info__content__box">
+					<ul>
+						<li>- A-GPS</li>
+						<li>- GLONASS</li>
+						<li>- BDS</li>
+						<li>- GALILEO</li>
+						<li>- QZSS</li>
+						<li>- iBeacon</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Bluetooth</div>
+				<div class="modal__properties__info__content__box">
+					<ul>
+						<li>- v5.0</li>
+						<li>- LE</li>
+						<li>- A2DP</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Cổng kết nối/sạc</div>
+				<div class="modal__properties__info__content__box">Lightning</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Jack tai nghe</div>
+				<div class="modal__properties__info__content__box">Lightning</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Kết nối khác</div>
+				<div class="modal__properties__info__content__box">NFC</div>
+			</div>
+			<div class="modal__properties__info__title">
+				<p style="color: #fff;line-height: 30px;">Pin & Sạc</p>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Loại pin</div>
+				<div class="modal__properties__info__content__box">Li-Ion</div>
+			</div>
+
+			<div class="modal__properties__info__title">
+				<p style="color: #fff;line-height: 30px;">Tiện ích</p>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Bảo mật nâng cao</div>
+				<div class="modal__properties__info__content__box">Mở khoá khuôn mặt Face ID</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Ghi âm	</div>
+				<div class="modal__properties__info__content__box">Có (microphone chuyên dụng chống ồn)</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Xem phim</div>
+				<div class="modal__properties__info__content__box">H.264(MPEG4-AVC)</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Nghe nhạc</div>
+				<div class="modal__properties__info__content__box">
+					<ul>
+						<li>- FLAC</li>
+						<li>- AAC</li>
+						<li>- MP3</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="modal__properties__info__title">
+				<p style="color: #fff;line-height: 30px;">Thông tin chung</p>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Thiết kế</div>
+				<div class="modal__properties__info__content__box">Nguyên khối</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Chất liệu</div>
+				<div class="modal__properties__info__content__box">Khung nhôm & Mặt lưng kính cường lực</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Thời điểm ra mắt</div>
+				<div class="modal__properties__info__content__box">09/2021</div>
+			</div>
+
+			<div class="modal__properties__info__content">
+				<div class="modal__properties__info__content__title">Kích thước, khối lượng</div>
+				<div class="modal__properties__info__content__box">Dài 131.5 mm - Ngang 64.2 mm - Dày 7.65 mm - Nặng 141 g</div>
+			</div>
+		</div>
+	</div>
+	<div class="message">
+		<div class="message_btn">
+			<svg class="svg" xmlns="http://www.w3.org/2000/svg" width="21.48" height="20.219" viewBox="0 0 21.48 20.219"><g transform="translate(-700.152 -165)"><g transform="translate(700.152 165)"><path d="M706.44,182.9l-2.03,2.034a.737.737,0,0,1-.661.276.775.775,0,0,1-.319-.663c.011-.535,0-1.069,0-1.628l-.3-.019a8.058,8.058,0,0,1-1.168-.083,2.3,2.3,0,0,1-1.8-2.257c0-1.842.025-3.685-.01-5.527a2.4,2.4,0,0,1,2.386-2.411c.2,0,.389,0,.614,0v-.288q0-2.141,0-4.281A3,3,0,0,1,706.2,165q6.218,0,12.436,0a2.971,2.971,0,0,1,2.975,2.867c.035,1.546.013,3.094.012,4.642,0,1.124.009,2.25-.016,3.374a2.988,2.988,0,0,1-2.59,2.724c-.5.04-1.01.029-1.515.041-.1,0-.2,0-.328,0v.283q0,1.122,0,2.243c0,.2.045.442-.2.529a.644.644,0,0,1-.683-.177c-.706-.692-1.4-1.4-2.1-2.1-.052-.05-.107-.1-.2-.183,0,.45,0,.853,0,1.257a2.368,2.368,0,0,1-1.886,2.341,2.9,2.9,0,0,1-.608.052q-2.378.007-4.757,0Zm9.852-2.84c0-.656,0-1.242,0-1.83,0-.4.176-.578.58-.582.513,0,1.027,0,1.54,0a3.664,3.664,0,0,0,.676-.031,2,2,0,0,0,1.645-2.01c0-2.514-.015-5.029.009-7.542a2.073,2.073,0,0,0-2.112-2.093q-6.2.005-12.39.006a2.354,2.354,0,0,0-.58.073,2.032,2.032,0,0,0-1.531,2.044q0,3.148.018,6.3c0,.438,0,.876.006,1.314a2.031,2.031,0,0,0,2.053,1.946c2.393-.02,4.787-.006,7.18-.007a1.1,1.1,0,0,1,.845.345C714.892,178.671,715.57,179.337,716.292,180.061Zm-3.182-1.406h-.322q-3.16,0-6.319,0a6.871,6.871,0,0,1-.743-.043,3.012,3.012,0,0,1-2.574-2.855c0-.627,0-1.253,0-1.88,0-.08-.007-.159-.011-.251-.222,0-.418,0-.613,0a1.385,1.385,0,0,0-1.393,1.417q0,2.719,0,5.436a1.3,1.3,0,0,0,1.1,1.373,6.592,6.592,0,0,0,1.419.045.7.7,0,0,1,.785.789c-.024.295,0,.592,0,.891l1.59-1.561c.1-.006.193-.016.289-.016h2.628c.952,0,1.9.007,2.854-.008a1.318,1.318,0,0,0,1.284-1.15c.05-.546.026-1.1.034-1.65C713.112,179.019,713.11,178.847,713.11,178.655Z" transform="translate(-700.152 -165)"></path></g></g></svg>
+		</div>
+		<div class="message__frame">
+			<div class="message__frame__header">
+				<svg viewBox="0 0 19 19"><path d="M19.043 3.805c.134 0 .256.025.368.077.11.053.21.123.3.212.089.074.159.17.211.289A.946.946 0 0120 4.76V19l-3.805-3.805H5.761a.93.93 0 01-.378-.077.77.77 0 01-.289-.212.77.77 0 01-.212-.289.93.93 0 01-.077-.378v-1.891h12.347V3.805h1.891zM15.24 9.5a.89.89 0 01-.267.667c-.09.09-.193.16-.311.212a.893.893 0 01-.356.078h-9.5L1 14.239V.957c0-.134.027-.256.078-.368.052-.11.122-.21.212-.3.089-.089.188-.159.3-.211A.866.866 0 011.956 0h12.348c.118 0 .237.027.356.078.118.052.222.122.31.212a.89.89 0 01.268.667V9.5z" fill="white" mask="url(#icon-messages_svg__mask-2)" transform="translate(-1)" fill-rule="evenodd" data-spm-anchor-id="a2o4n.10441748.icms-5000632-1511774372834.i3.6a182224oEUnow"></path></svg>
+				<p>Tin nhắn</p>
+				<div class="btnClose">
+					<svg class="haha" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.335 23.335"><g transform="translate(-1833.333 -38.333)"><line x2="31" transform="translate(1834.04 39.04) rotate(45)" fill="none" stroke="#fff" stroke-width="2"></line><line x2="31" transform="translate(1855.96 39.04) rotate(135)" fill="none" stroke="#fff" stroke-width="2"></line></g></svg>
+				</div>
+			</div>
+
+			<div class="message__frame__content">
+				<div class="message__frame__content__manager">
+					Chúng tôi có thể giúp gì cho bn đây guys
+				</div>
+			</div>
+
+			<div class="message__frame__input">
+				<input class="inputValue" type="text" placeholder="Nhập thông tin cần hỗ trợ...">
+				<div class="message__frame__input__btn">
+					<svg class="crt8y2ji" width="20px" height="20px" viewBox="0 0 24 24"><path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 C22.8132856,11.0605983 22.3423792,10.4322088 21.714504,10.118014 L4.13399899,1.16346272 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.8376543,3.0486314 1.15159189,3.99121575 L3.03521743,10.4322088 C3.03521743,10.5893061 3.34915502,10.7464035 3.50612381,10.7464035 L16.6915026,11.5318905 C16.6915026,11.5318905 17.1624089,11.5318905 17.1624089,12.0031827 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z" fill-rule="evenodd" stroke="none"></path></svg>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="preloader-inner">
+			<div class="preloader-icon">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<!-- End Preloader -->
+		
+		<!-- Header -->
+		<header class="header shop">
+			<!-- Topbar -->
+			<div class="topbar">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-md-12 col-12">
+							<!-- Top Left -->
+							<div class="top-left">
+								<ul class="list-main">
+									<li><i class="ti-headphone-alt"></i> +060 (800) 801-582</li>
+									<li><i class="ti-email"></i> support@shophub.com</li>
+								</ul>
+							</div>
+							<!--/ End Top Left -->
+						</div>
+						<div class="col-lg-8 col-md-12 col-12">
+							<!-- Top Right -->
+							<div class="right-content">
+								<ul class="list-main">
+									<li><i class="ti-location-pin"></i>Địa chỉ cửa hàng</li>
+									<li><i class="ti-alarm-clock"></i> <a href="#">Deal sốc mỗi ngày!!</a></li>
+									<li class="js-logout" style="display: none;"><i class="ti-user"></i> <a href="account.html" class="js-account">Tài khoản của tôi</a></li>
+									<li class="js-logout logout" style="display: none;"><i class="ti-power-off"></i><a href="blog-single-sidebar.html">Đăng xuất</a></li>
+								</ul>
+							</div>
+							<!-- End Top Right -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Topbar -->
+			<div class="middle-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-2 col-md-2 col-12">
+							<!-- Logo -->
+							<div class="logo" style="margin: 0;max-width: 100px">
+								<a href="index.html"><img src="images/symbol2.png" alt="logo" style="min-width: 100px"></a>
+							</div>
+							<!--/ End Logo -->
+							<!-- Search Form -->
+							<div class="search-top">
+								<div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
+								<!-- Search Form -->
+								<div class="search-top">
+									<form class="search-form">
+										<input type="text" placeholder="Search here..." name="search">
+										<button value="search" type="submit"><i class="ti-search"></i></button>
+									</form>
+								</div>
+								<!--/ End Search Form -->
+							</div>
+							<!--/ End Search Form -->
+							<div class="mobile-nav"></div>
+						</div>
+						<div class="col-lg-8 col-md-7 col-12">
+							<div class="search-bar-top">
+								<div class="search-bar">
+									<select>
+										<option selected="selected">All</option>
+										<option>Điện thoại</option>
+										<option>Phụ kiện</option>
+									</select>
+									<form>
+										<input name="search" class="searchInput" placeholder="Nhập mã hoặc tên sản phẩm cần tìm..." type="search">
+										<button href="search.html" class="btnn searchBtn"><i class="ti-search"></i></button>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-3 col-12">
+							<div class="right-bar">
+								<!-- Search Form -->
+								<div class="sinlge-bar">
+									<a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+								</div>
+								<div class="sinlge-bar shopping">
+									<a href="cart.html" class="single-icon"><i class="ti-bag"></i> <span class="total-count">3</span></a>
+									<!-- Shopping Item -->
+									<div class="shopping-item">
+										<div class="noLogin" style="text-align: center;padding: 20px 0;">Giỏ hàng trống</div>
+										<div class="dropdown-cart-header yesLogin">
+											<span class="countTotal">3 </span><span> Sản phẩm</span>
+											<a href="cart.html">Xem giỏ hàng</a>
+										</div>
+										<ul class="shopping-list yesLogin"></ul>
+										<div class="bottom yesLogin">
+											<div class="total">
+												<span>Giảm giá</span>
+												<span class="total-amount"><span>0</span><span style="text-transform: none;text-decoration: underline;">đ</span></span>
+											</div>
+											<div class="total">
+												<span>Tổng</span>
+												<span class="total-amount total-cart"><span class="totalMoney">64,510,000</span><span style="text-transform: none;text-decoration: underline;">đ</span></span>
+											</div>
+											<a href="checkout.html" class="btn animate">Thanh toán</a>
+										</div>
+									</div>
+									<!--/ End Shopping Item -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Header Inner -->
+			<div class="header-inner">
+				<div class="container">
+					<div class="cat-nav-head">
+						<div class="row">
+							<div class="col-12">
+								<div class="menu-area">
+									<!-- Main Menu -->
+									<nav class="navbar navbar-expand-lg">
+										<div class="navbar-collapse">	
+											<div class="nav-inner">	
+												<ul class="nav main-menu menu navbar-nav">
+													<li><a href="index.html">Trang chủ</a></li>
+													<li><a href="shop-grid.html">Mặt hàng<span class="new">New</span></a></li>
+													<li><a href="blog-single-sidebar.html">Tin tức</a></li>												
+													<li><a href="chinhsach.html">Chính sách của cửa hàng</a></li>
+													<li><a href="contact.html">Hỗ trợ tư vấn</a></li>
+													<li class="admin"><a href="statistic.html">Quản lý</a></li>		
+												</ul>
+											</div>
+										</div>
+									</nav>
+									<!--/ End Main Menu -->	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Header Inner -->
+		</header>
+		<!--/ End Header -->
+		
+		<!-- Breadcrumbs -->
+		<div class="breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="bread-inner">
+							<ul class="bread-list">
+								<li><a href="index1.html">Trang chủ<i class="ti-arrow-right"></i></a></li>
+								<li class="active"><a href="product-details.html">Chi tiết sản phẩm</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Breadcrumbs -->
+			
+		<!-- Start Blog Single -->
+		<section class="blog-single section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-12" style="box-sizing: border-box;">
+						<div class="blog-single-main">
+                            <div class="row" style="margin-top: 10px;margin-bottom: 10px;display: flex;justify-content: space-between;">
+                                <div class="col-8 name" style="padding-left: 0;font-size: 18px;font-weight: 600;">Điện thoại iPhone 13 Chính hãng VN/A (128GB, 256GB, 512GB)</div>
+                                <div class="col-4" style="padding-right: 15px;text-align: right;color:rgb(240, 179, 13);font-size: 16px;">
+                                    <i class="icon-star-full"></i>
+                                    <i class="icon-star-full"></i>
+                                    <i class="icon-star-full"></i>
+                                    <i class="icon-star-full"></i>
+                                    <i class="icon-star-full"></i>
+                                    (230 đánh giá)
+                                </div>
+                            </div>
+                            <div class="row" style="">
+                                <div class="col-4" style="display: flex;flex-direction: column;">
+                                    <div class="product__image" style="position: relative; top: 0px;right: 15px;display: flex;justify-content: center;">
+                                        <img class="imagee" src="product/1/productDetailImage/1.jpg" style="max-width: 350px;max-height: 350px;" alt="Ảnh sản phẩm">
+                                    </div>
+                                    <div class="product__images" style="box-shadow: 0 0 15px rgba(0,0,0,0.3);display: flex;justify-content: space-evenly; margin: 5px 0 0 -15px; padding: 10px ; background-color: rgb(245, 244, 244); border-radius: 10px;">
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <div style="margin-top: 10px;">
+                                        <span class="totalMoney" style="color: red;font-size: 25px;font-weight: 600;"><span class="money">18,000,000</span><span style="text-decoration: underline;">đ</span></span>
+                                    </div>
+                                    <div style="width: 100%; color: #fff;text-align: center;background-color: #00483d; border-radius: 4px; text-transform: uppercase;padding: 5px 10px;margin-top: 10px;">
+                                        miễn phí vận chuyển toàn quốc
+                                    </div>
+
+                                    <div>
+                                        <p style="font-size: 14px; font-weight: 600; margin-top: 10px;margin-bottom: 10px;color: #000;">Lựa chọn phiên bản</p>
+                                        <div style="display: flex;flex-wrap: wrap;" id="storage">
+                                        </div>
+                                    </div>
+
+                                    <!-- <div>
+                                        <p style="font-size: 14px; font-weight: 600; margin-top: 10px;margin-bottom: 10px;color: #000;">Lựa chọn màu và xem địa chỉ còn hàng</p>
+                                        <div style="display: flex;flex-wrap: wrap;" id="color">
+                                        </div>
+                                    </div> -->
+
+                                    <div>
+                                        <p style="font-size: 14px; font-weight: 600; margin-top: 10px;margin-bottom: 5px;color: #000;text-transform: uppercase;">khuyến mãi</p>
+                                        <div style="max-width: 40px;padding: 0 5px; text-align: center;background-color: rgb(255, 187, 0);color: #fff;font-size: 11px;border-radius: 3px;width: auto;box-shadow: 0 0 5px rgba(0,0,0,0.2);">KM 1</div>
+                                        <p style="font-size: 13px;color: #000;margin-top: 5px;margin-bottom: 5px;">Giảm thêm 100.000đ - 150.000đ khi thanh toán qua VNPAY QR</p>
+                                        <div style="max-width: 40px;padding: 0 5px; text-align: center;background-color: rgb(255, 187, 0);color: #fff;font-size: 11px;border-radius: 3px;width: auto;box-shadow: 0 0 5px rgba(0,0,0,0.2);">KM 2</div>
+                                        <p style="font-size: 13px;color: #000;margin-top: 5px;margin-bottom: 5px;">Giảm thêm tới 1.500.000đ khi Thu cũ - Lên đời iPhone 13 Series</p>
+                                        <div style="max-width: 40px;padding: 0 5px; text-align: center;background-color: rgb(255, 187, 0);color: #fff;font-size: 11px;border-radius: 3px;width: auto;box-shadow: 0 0 5px rgba(0,0,0,0.2);">KM 3</div>
+                                        <p style="font-size: 13px;color: #000;margin-top: 5px;margin-bottom: 5px; line-height: normal;">Tặng sim data Mobifone Hera 5G (2.5GB/ngày) - Lưu ý: chỉ mua trực tiếp tại cửa hàng, không áp dụng shop SIS Hà Nội</p>
+                                    </div>
+
+                                    <a href="checkout.html" class="btnCart">
+                                        <p style="line-height: normal;font-size: 13px; color: #fff;text-align: center;font-weight: 600;text-transform: uppercase;">mua ngay</p>
+                                        <p style="line-height: normal;font-size: 13px; color: #fff;text-align: center;">Giao hàng tận nhà (COD) hoặc Nhận tại cửa hàng</p>
+                                    </a>
+                                    <div style="display: flex;justify-content: space-between;">
+                                        <a href="cart.html" class="btnCart1 btnCart11">
+                                            <p style="line-height: normal;font-size: 13px; color: #fff;text-align: center;font-weight: 600;text-transform: uppercase;">thêm vào giỏ hàng</p>
+                                        </a>
+                                        <div class="btnCart1">
+                                            <p style="line-height: normal;font-size: 13px; color: #fff;text-align: center;font-weight: 600;text-transform: uppercase;">mua trả góp 0%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3" style="margin-top: 10px;">
+                                    <div style="padding: 5px;background-color: rgb(177, 177, 0);font-size: 15px;font-weight: 600;color: #fff;">Sản phẩm tương tự</div>
+                                    <div style="background-color: rgba(231, 231, 231,0.281);box-shadow: 0 0 5px rgba(0,0,0,0.2);padding: 4px;">
+                                        <div style="display: flex;margin-top: 5px;">
+                                            <a href="product-details.html" style="cursor: pointer; margin-right: 5px;" onclick="clickNameProduct(this)" ip="10"><img src="product/10/imgS/1.jpg" alt="Ảnh sản phẩm" style="position: relative;top: 0px;"></a>
+                                            <div style="display: flex;flex-direction: column;">
+                                                <a href="product-details.html" style="font-size: 13px; font-weight: 600;" onclick="clickNameProduct(this)" ip="10">Samsung Galaxy S22 Plus</a>
+                                                <p style="color: red;font-size: 13px;">25,190,000<span style="text-decoration: underline;">đ</span></p>
+                                                <a href="product-details.html" style="font-size: 13px;color: rgb(57, 57, 255);" onclick="clickNameProduct(this)" ip="10">Xem chi tiết</a>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex;margin-top: 5px;">
+                                            <a href="product-details.html" style="cursor: pointer; margin-right: 5px;" onclick="clickNameProduct(this)" ip="11"><img src="product/11/imgS/1.jpg" alt="Ảnh sản phẩm" style="position: relative;top: 0px;"></a>
+                                            <div style="display: flex;flex-direction: column;">
+                                                <a href="product-details.html" style="font-size: 13px; font-weight: 600;" onclick="clickNameProduct(this)" ip="11">Samsung Galaxy S22</a>
+                                                <p style="color: red;font-size: 13px;">21,290,000<span style="text-decoration: underline;">đ</span></p>
+                                                <a href="product-details.html" style="font-size: 13px;color: rgb(57, 57, 255);" onclick="clickNameProduct(this)" ip="11">Xem chi tiết</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="padding: 5px;background-color: rgb(177, 177, 0);font-size: 15px;font-weight: 600;color: #fff;margin-top: 20px;">Sản phẩm liên quan</div>
+                                    <div style="background-color: rgba(231, 231, 231, 0.281);box-shadow: 0 0 5px rgba(0,0,0,0.2);padding: 4px;">
+                                        <div style="display: flex;margin-top: 5px;">
+                                            <a href="product-details.html" style="cursor: pointer; margin-right: 5px;" onclick="clickNameProduct(this)" ip="12"><img src="product/12/imgS/1.jpg" alt="Ảnh sản phẩm" style="position: relative;top: 0px;"></a>
+                                            <div style="display: flex;flex-direction: column;">
+                                                <a href="product-details.html" style="font-size: 13px; font-weight: 600;" onclick="clickNameProduct(this)" ip="12">Samsung Galaxy Z Fold3</a>
+                                                <p style="color: red;font-size: 13px;">35,790,000<span style="text-decoration: underline;">đ</span></p>
+                                                <a href="product-details.html" style="font-size: 13px;color: rgb(57, 57, 255);" onclick="clickNameProduct(this)" ip="12">Xem chi tiết</a>
+                                            </div>
+                                        </div>
+                                        <div style="display: flex;margin-top: 5px;">
+                                            <a href="product-details.html" style="cursor: pointer; margin-right: 5px;" onclick="clickNameProduct(this)" ip="13"><img src="product/13/imgS/1.jpg" alt="Ảnh sản phẩm" style="position: relative;top: 0px;"></a>
+                                            <div style="display: flex;flex-direction: column;">
+                                                <a href="product-details.html" style="font-size: 13px; font-weight: 600;" onclick="clickNameProduct(this)" ip="13">Samsung Galaxy Z Flip3</a>
+                                                <p style="color: red;font-size: 13px;">20,150,000<span style="text-decoration: underline;">đ</span></p>
+                                                <a href="product-details.html" style="font-size: 13px;color: rgb(57, 57, 255);" onclick="clickNameProduct(this)" ip="13">Xem chi tiết</a>
+                                            </div>
+                                        </div>
+										<div style="display: flex;margin-top: 5px;">
+                                            <a href="product-details.html" style="cursor: pointer; margin-right: 5px;" onclick="clickNameProduct(this)" ip="14"><img src="product/14/imgS/1.jpg" alt="Ảnh sản phẩm" style="position: relative;top: 0px;"></a>
+                                            <div style="display: flex;flex-direction: column;">
+                                                <a href="product-details.html" style="font-size: 13px; font-weight: 600;" onclick="clickNameProduct(this)" ip="14">Samsung Galaxy A32</a>
+                                                <p style="color: red;font-size: 13px;">5,990,000<span style="text-decoration: underline;">đ</span></p>
+                                                <a href="product-details.html" style="font-size: 13px;color: rgb(57, 57, 255);" onclick="clickNameProduct(this)" ip="14">Xem chi tiết</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+							<div class="row" style="margin-top: 30px;">
+								<div class="col-8 properties">
+									<h3 style="color: #000;font-size: 19.5px;font-weight: 600;">Mua iPhone 13 Mini chính hãng VN/A, giá rẻ tại Bảo Hân Shop</h3>
+									<p>iPhone 13 Mini ra mắt với thiết kế nhỏ gọn cùng với hiệu năng khủng vượt trội, dung lượng pin ấn tượng chắc chắn sẽ không làm bạn thất vọng. </p>
+									<h4 style="font-size: 16px;margin: 10px 0;">Thiết kế nhỏ gọn, màu sắc thời thượng </h4>
+									<p>iPhone 13 Mini có thiết kế ống kính camera chéo và phần tai thỏ nhỏ hơn. Apple cho biết so với thế hệ trước, phần tai thỏ này đã được làm nhỏ đi 20%. iPhone 13 Mini sở hữu màn hình OLED 5.4 inch. Màn hình này sáng hơn 28% so với iPhone 12 Mini. Với nội dung thông thường, độ sáng tối đa là 800 nits còn với nội dung HDR thì độ sáng lên tới 1200 nits. Ngoài ra, màn hình còn được bảo vệ bởi kính cường lực Ceramic Shield siêu bền.Công nghệ màn hình Super Retina XDR cùng mật độ điểm ảnh cực cao mang đến khả năng hiển thị sắc nét, gam màu tự nhiên. iPhone 13 Mini cũng có công nghệ Face ID mới nhất. Bên cạnh màu hồng hoàn toàn mới, người dùng còn có thể lựa chọn các phiên bản màu đen, trắng, xanh, đỏ.</p>
+									<img src="./images/product/productDetailsImage.png" alt="Ảnh sản phẩm">
+									<h4 style="font-size: 16px;margin: 10px 0;">Hiệu năng khủng cùng chip A15 Bionic </h4>
+									<p>Chip Apple A15 Bionic mới nhất tiếp tục dẫn đầu về hiệu năng. Apple cho biết con chip này có CPU nhanh hơn 50% và GPU nhanh hơn 30% so với đối thủ. A15 Bionic được Apple đánh giá là con chip có khả năng tối ưu hóa năng lượng, bảo vệ quyền riêng tư và hỗ trợ chơi game mượt mà. Con chip này có thể thực hiện được 15.8 nghìn tỷ phép toán mỗi giây, cho trải nghiệm đỉnh hơn nhiều khi sử dụng các ứng dụng bên thứ 3. iPhone 13 Mini có ba tùy chọn bộ nhớ trong bao gồm 128GB, 256GB và 512GB. Chiếc iPhone này tiếp tục hỗ trợ băng tần mạng 5G tiên tiến, tương thích với hơn 200 nhà mạng phổ biến trên toàn thế giới, bao gồm cả 3 nhà mạng lớn tại Việt Nam là Viettel, VinaPhone và MobiFone.</p>
+									<img src="./images/product/productDetailsImage2.png" alt="Ảnh minh họa" style="margin: 10px 0;">
+									<h4 style="font-size: 16px;margin: 10px 0;">Camera kép thiết kế chéo mới lạ bắt trọn mọi khoảnh khắc </h4>
+									<p>Camera iPhone 13 Mini được thiết kế chéo với thiết lập camera kép. Sự thay đổi về vị trí sắp xếp ống kính cũng là một điểm mới khá thú vị. Máy vẫn có một ống kính góc rộng và một ống kính góc siêu rộng với độ phân giải 12MP. Tuy nhiên camera chính đã mở rộng khẩu độ lên thành f/1.6, kích thước điểm ảnh của cảm biến cũng lớn hơn, đặc biệt còn tích hợp cả công nghệ chống rung cảm biến “sensor-shift”. iPhone 13 Mini cũng được bổ sung nhiều tính năng chụp hình mới. Một trong số đó là Cinematic Mode lấy khóa nét ở một chủ thể nhất định và điều chỉnh tiêu cự khi chủ thể di chuyển xung quanh khung hình. Chế độ Cinematic Mode kết hợp Dolby Vision HDR giúp quay video chuyên nghiệp, chuyển cảnh mượt mà hơn. Chiếc iPhone này còn có tính năng Photographic styles, một dạng bộ lọc màu mới dựa trên các thuật toán cho phép người dùng chỉnh sửa ảnh trong thời gian thực theo ý thích. Các tính năng khác như Night mode, Portrait mode, Smart HDR 4, Deep Fusion giúp chụp ảnh thiếu sáng tốt hơn, làm mờ hậu cảnh chuyên nghiệp hơn.</p>
+									<img src="./images/product/productDetailsImage1.png" alt="Ảnh minh họa">
+									<h4 style="font-size: 16px;margin: 10px 0;">Thời lượng pin được nâng cấp đáng kể</h4>
+									<p>Dòng sản phẩm iPhone 13 năm nay đã được nâng cấp pin đáng kể mà không cần khung máy lớn hơn. Theo như Apple tiết lộ thì iPhone 13 Mini có thời lượng pin dài hơn 1.5 giờ so với iPhone 12 Mini năm ngoái. Những cải tiến lớn về pin đạt được là nhờ khả năng tối ưu hóa năng lượng của chip A15 Bionic. Người dùng có thể thoải mái trải nghiệm cả ngày mà không lo hết pin. Bên cạnh đó, chiếc iPhone này cũng hỗ trợ sạc nhanh 20W giúp sạc đầy pin nhanh chóng. Hoàng Hà Mobile là nhà phân phối uỷ quyền chính thức của Apple tại Việt Nam, Vì vậy bạn có thể yên tâm đặt mua iPhone 13 Mini với mức giá phải chăng nhất.  </p>
+									<img src="./images/product/productDetailsImage3.png" alt="Ảnh minh họa" style="margin: 10px 0;">
+									<p style="margin-bottom: 30px;">Tất cả iPhone chính hãng VN/A được phân phối tại Hoàng Hà Mobile đều được nhập trực tiếp từ Công ty TNHH Apple Việt Nam. HoangHa Mobile là nhà bán lẻ ủy quyền chính thức của Apple tại Việt Nam.</p>
+									<div class="more">
+										<div style="cursor: pointer; padding: 10px 10px;display: inline-block;">Xem thêm</div>
+									</div>
+									<div class="hidden">
+										<div style="cursor: pointer; padding: 10px 10px;display: inline-block;">Thu gọn</div>
+									</div>
+								</div>
+
+								<div class="col-4">
+									<div class="propertiess">
+										<h4 style="font-size: 15px;margin-bottom: 15px;font-weight: 600;">Thông số kỹ thuật <span id="titleName">Apple iPhone 13 Mini - 512GB - Chính hãng VN/A</span></h4>
+										<div style="position: relative;">
+											<img id="image" src="./images/product/properties.png" alt="Ảnh sản phẩm">
+											<div style="position: absolute;bottom: -2px;left: 0;right: 0;display: flex;justify-content: center;align-items: center;">
+												<div class="cauHinh" style="min-width: 250px;text-align: center;line-height: 30px;color: #00483d;font-size: 16px;font-weight: 600;padding: 0 15px;cursor: pointer;;background-color: #fff;z-index: 3;border-radius: 10px;box-shadow: 0 0 20px rgba(0,0,0,0.3);">Cấu hình chi tiết</div>
+											</div>
+										</div>
+										<p style="font-size: 13px; padding: 5px;margin-top: 10px;color: #000;"><span style="font-weight: 600;">Công nghệ màn hình:</span> OLED</p>
+										<p style="font-size: 13px; padding: 5px;color: #000;"><span style="font-weight: 600;">Độ phân giải:</span> Full HD+ (1080 x 2340 Pixels), 2 camera 12 MP, 12 MP</p>
+										<p style="font-size: 13px; padding: 5px;color: #000;"><span style="font-weight: 600;">Hệ điều hành:</span> iOS 15</p>
+										<p style="font-size: 13px; padding: 5px;color: #000;"><span style="font-weight: 600;">Chip xử lý (CPU)Công nghệ màn hình:</span> Apple A15 Bionic 6 nhân</p>
+										<p style="font-size: 13px; padding: 5px;color: #000;"><span style="font-weight: 600;">Bộ nhớ trong (ROM):</span> 512 GB</p>
+										<p style="font-size: 13px; padding: 5px;color: #000;"><span style="font-weight: 600;">RAM:</span> 4 GB</p>
+										<p style="font-size: 13px; padding: 5px;color: #000;"><span style="font-weight: 600;">Mạng di động:</span> Hỗ trợ 5G</p>
+										<p style="font-size: 13px; padding: 5px;color: #000;"><span style="font-weight: 600;">Số khe sim:</span> 1 Nano SIM & 1 eSIM</p>
+									</div>
+								</div>
+                            </div>
+                            <div class="row">
+								<div class="col-12" style="padding: 0;">
+									<div class="comments">
+										<h3 class="comment-title">Bình luận (5)</h3>
+										<!-- Single Comment -->
+										<div class="single-comment">
+											<img src="./images/product/avatar1.jpg" alt="#" style="border: 1px solid #ccc; object-fit: contain; box-shadow: 0 1px 8px rgba(0,0,0,0.2);">
+											<div class="content">
+												<h4 style="margin-bottom: 10px;">Trung Phước <span>2021-11-3 12:10</span></h4>
+												<p style="margin-bottom: 8px;">Shop 10 điểm</p>
+												<div class="button">
+													<a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Phản hồi</a>
+												</div>
+											</div>
+										</div>
+										<!-- End Single Comment -->
+										<!-- Single Comment -->
+										<div class="single-comment">
+											<img src="./images/product/avatar2.jpg" alt="#" style="border: 1px solid #ccc; object-fit: contain; box-shadow: 0 1px 8px rgba(0,0,0,0.2);">
+											<div class="content">
+												<h4 style="margin-bottom: 10px;">Bá Hân <span>2021-11-2 10:05</span></h4>
+												<p style="margin-bottom: 8px;">Điện thoại đẹp quá</p>
+												<div class="button">
+													<a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Phản hồi</a>
+												</div>
+											</div>
+										</div>
+										<!-- End Single Comment -->
+										<!-- Single Comment -->
+										<div class="single-comment">
+											<img src="./images/product/avatar3.jpg" alt="#" style="border: 1px solid #ccc; object-fit: contain; box-shadow: 0 1px 8px rgba(0,0,0,0.2);">
+											<div class="content">
+												<h4 style="margin-bottom: 10px;">Gia Bình <span>2021-11-2 07:10</span></h4>
+												<p style="margin-bottom: 8px;">Hàng tốt, đẹp, giá thành phải chăng</p>
+												<div class="button">
+													<a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Phản hồi</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="single-comment">
+											<img src="./images/product/avatar4.jpg" alt="#" style="border: 1px solid #ccc; object-fit: contain; box-shadow: 0 1px 8px rgba(0,0,0,0.2);">
+											<div class="content">
+												<h4 style="margin-bottom: 10px;">Trường Giang <span>2021-11-1 21:09</span></h4>
+												<p style="margin-bottom: 8px;">Sản phẩm đẹp, chất lượng, 5 stars</p>
+												<div class="button">
+													<a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Phản hồi</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="single-comment">
+											<img src="./images/product/avatar5.jpg" alt="#" style="border: 1px solid #ccc; object-fit: contain; box-shadow: 0 1px 8px rgba(0,0,0,0.2);">
+											<div class="content">
+												<h4 style="margin-bottom: 10px;">Bảo Thạnh <span>2021-10-31 00:09</span></h4>
+												<p style="margin-bottom: 8px;">Sản phẩm rất đẹp, 10 điểm</p>
+												<div class="button">
+													<a href="#" class="btn"><i class="fa fa-reply" aria-hidden="true"></i>Phản hồi</a>
+												</div>
+											</div>
+										</div>
+										<!-- End Single Comment -->
+									</div>									
+								</div>											
+                            </div>
+                            <div class="row">
+								<div class="col-12" style="padding: 0;">			
+									<div class="reply">
+										<div class="reply-head">
+											<h2 class="reply-title">Để lại bình luận</h2>
+											<!-- Comment Form -->
+											<form class="form" action="#">
+												<div class="row">
+													<div class="col-lg-6 col-md-6 col-12">
+														<div class="form-group">
+															<label>Tên của bạn<span>*</span></label>
+															<input type="text" name="name" placeholder="" required="required">
+														</div>
+													</div>
+													<div class="col-lg-6 col-md-6 col-12">
+														<div class="form-group">
+															<label>Email<span>*</span></label>
+															<input type="email" name="email" placeholder="" required="required">
+														</div>
+													</div>
+													<div class="col-12">
+														<div class="form-group">
+															<label>Bình luận<span>*</span></label>
+															<textarea name="message" placeholder=""></textarea>
+														</div>
+													</div>
+													<div class="col-12">
+														<div class="form-group button">
+															<button type="submit" class="btn">Đăng bình luận</button>
+														</div>
+													</div>
+												</div>
+											</form>
+											<!-- End Comment Form -->
+										</div>
+									</div>			
+								</div>			
+                            </div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+		<!--/ End Blog Single -->
+			
+		<!-- Start Footer Area -->
+		<footer class="footer">
+			<!-- Footer Top -->
+			<div class="footer-top section">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 col-md-6 col-12">
+							<!-- Single Widget -->
+							<div class="single-footer about">
+								<div class="logo">
+									<a href="index.html"><img src="images/symbol2.png" alt="#" style="max-width: 200px"></a>
+								</div>
+								<p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+								<p class="call">Gọi hỗ trợ :<span><a href="tel:123456789">0123456789</a></span></p>
+							</div>
+							<!-- End Single Widget -->
+						</div>
+						<div class="col-lg-2 col-md-6 col-12">
+							<!-- Single Widget -->
+							<div class="single-footer links">
+								<h4>Thông tin</h4>
+								<ul>
+									<li><a href="#">Giới thiệu cửa hàng</a></li>
+									<li><a href="#">Câu hỏi thường gặp</a></li>
+									<li><a href="#">Chính sách</a></li>
+									<li><a href="#">Liên hệ</a></li>									
+								</ul>
+							</div>
+							<!-- End Single Widget -->
+						</div>
+						<div class="col-lg-2 col-md-6 col-12">
+							<!-- Single Widget -->
+							<div class="single-footer links">
+								<h4>Hỗ trợ khách hàng</h4>
+								<ul>
+									<li><a href="chinhsach.html">Phương thức thanh toán</a></li>
+									<li><a href="chinhsach.html">Đổi trả</a></li>
+									<li><a href="chinhsach.html">Hoàn tiển</a></li>
+									<li><a href="chinhsach.html">Vận chuyển</a></li>
+									<li><a href="chinhsach.html">Chính sách thanh toán</a></li>
+								</ul>
+							</div>
+							<!-- End Single Widget -->
+						</div>
+						<div class="col-lg-3 col-md-6 col-12">
+							<!-- Single Widget -->
+							<div class="single-footer social">
+								<h4>Địa chỉ cửa hàng</h4>
+								<!-- Single Widget -->
+								<div class="contact">
+									<ul>
+										<li>Nguyễn trỗi</li>
+										<li>Thành phố huế, Thừa Thiên Huế</li>
+										<li>info@eshop.com</li>
+										<li>0123456789</li>
+									</ul>
+								</div>
+								<!-- End Single Widget -->
+								<ul>
+									<li><a href="#"><i class="ti-facebook"></i></a></li>
+									<li><a href="#"><i class="ti-twitter"></i></a></li>
+									<li><a href="#"><i class="ti-flickr"></i></a></li>
+									<li><a href="#"><i class="ti-instagram"></i></a></li>
+								</ul>
+							</div>
+							<!-- End Single Widget -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Footer Top -->
+			<div class="copyright">
+				<div class="container">
+					<div class="inner">
+						<div class="row">
+							<div class="col-lg-6 col-12">
+								<div class="left">
+									<p>Copyright © 2020 <a href="http://www.wpthemesgrid.com" target="_blank">Wpthemesgrid</a>  -  All Rights Reserved.</p>
+								</div>
+							</div>
+							<div class="col-lg-6 col-12">
+								<div class="right">
+									<img src="images/payments.png" alt="#">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	<!-- /End Footer Area -->
+	<script>
+		if(localStorage.getItem('check')) window.location.href = 'search.html'
+
+		const adminBtn = document.querySelector('.admin')
+		if(localStorage.getItem('IsAdmin')==='null'||localStorage.getItem('IsAdmin')===null)
+			adminBtn.style.display = 'none'
+		else
+			adminBtn.style.display = 'block'
+		if(localStorage.getItem('message')===null)	localStorage.setItem('message',JSON.stringify([]))
+		if(localStorage.getItem('cart') ===null) localStorage.setItem('cart',JSON.stringify([]))
+		if(localStorage.getItem('ip') ===null) localStorage.setItem('ip',0)
+		if(localStorage.getItem('infomation') ===null) localStorage.setItem('infomation',JSON.stringify([]))
+
+		
+		const totalCount = document.querySelector('.total-count')
+		const emptyCart = document.querySelector('.noLogin')
+		const haveCart = [...document.querySelectorAll('.yesLogin')]
+		totalCount.style.display = null
+		emptyCart.style.display = 'none'
+		haveCart.forEach(data=>{
+			data.style.display = null
+		})
+		
+
+		async function getapi(url) {
+			const response = await fetch(url);
+			var data = await response.json()
+
+			localStorage.setItem('infomation',JSON.stringify([data[0].ten,data[0].anhNho]))
+			document.querySelector('.name').innerText = data[0].ten
+			var storage = document.querySelector('#storage')
+			var imgS = document.querySelector('.product__images')
+
+			data.forEach((item,index)=>{
+				var a = document.createElement('div')
+				a.classList.add('hoverBox','js-first')
+				if(index==0) a.classList.add('click')
+				a.setAttribute('price',item.gia)
+				a.setAttribute('storage',`${item.rom}|${item.mau}`)
+				a.addEventListener('click',reloadStorage)
+				a.innerHTML = `
+                    <p style="text-align: center;">${item.rom}|${item.mau}</p>
+                	<p class="pricePhone" style="color: red; text-align: center;"><span price="0">${changeMoney(item.gia)}</span><span style="text-decoration: underline;">đ</span></p>
+				`
+				storage.appendChild(a)
+
+				var b = document.createElement('div')
+				b.classList.add('imageS')
+				if(index==0) b.classList.add('enable')
+				b.setAttribute('image',item.anhTo)
+				b.style.height = '70px'
+				b.style.width = '70px'
+				b.addEventListener('click',reloadImgS)
+				b.innerHTML = `<img src="${item.anhNho}" class="imageSmall" style="cursor: pointer;" alt="Ảnh sản phẩm">`
+				imgS.appendChild(a)
+			})
+			var imagee = document.querySelector('.imagee')
+			imagee.setAttribute('src',data[0].anhTo)
+
+			var image = document.querySelector('#image')
+			image.setAttribute('src',data[0].anhTo)
+			
+			var titleName = document.querySelector('#titleName')
+			titleName.innerText = data[0].ten
+			reloadPrice()
+		}
+		getapi(`http://localhost:54243/details?maSanPham=${localStorage.getItem('id')}`)
+		renderCart()
+
+		function reloadPrice(){
+			var storage = document.querySelector('#storage > .click')
+			var color = document.querySelector('#color > .click')
+
+			var money = document.querySelector('.money')
+			money.setAttribute('money',Number(storage.getAttribute('price')))
+			money.innerText = `${changeMoney(String(Number(storage.getAttribute('price'))))}`
+		}
+
+		function reloadStorage(){
+			var storage = [...document.querySelectorAll('#storage > .js-first')]
+			storage.forEach(item=>{
+				if(item.classList.contains('click'))
+					item.classList.remove('click')
+			})
+			this.classList.add('click')
+			reloadPrice()
+		}
+		
+		function reloadImgS(){
+			var a = [...document.querySelectorAll('.imageS')]
+			a.forEach(item=>{
+				if(item.classList.contains('enable'))
+					item.classList.remove('enable')
+			})
+			this.classList.add('enable')
+			reloadImage(this.getAttribute('image'))
+		}
+
+		function reloadImage(img){
+			var imagee = document.querySelector('.imagee')
+			imagee.setAttribute('src',`${img}`)
+		}
+
+		function renderCart(){
+			if(JSON.parse(localStorage.getItem('cart')).length==0){
+				emptyCart.style.display = null
+				totalCount.style.display = 'none'
+				haveCart.forEach(data=>{
+					data.style.display = 'none'
+				})
+			}
+			else{
+				const shoppingList = document.querySelector('.shopping-list')
+				shoppingList.innerHTML = ""
+				emptyCart.style.display = 'none'
+				totalCount.style.display = null
+				haveCart.forEach(data=>{
+					data.style.display = null
+				})
+				var a = JSON.parse(localStorage.getItem('cart'))
+				var countPro = 0;
+				var money = 0;
+				a.forEach(data=>{
+					countPro+= Number(data[5])
+					var num = Number(data[5])*Number(data[6])
+					const html = document.createElement('li')
+					html.setAttribute('ip',data[0])
+					html.innerHTML = `
+						<a href="#" class="remove" onClick="doIt(this)" title="Remove this item" ip="${data[0]}" ic="${data[1]}"><i class="fa fa-remove"></i></a>
+						<a class="cart-img" href="product-details.html" ip="${data[1]}" onClick="clickNameProduct(this)"><img src="${data[3]}" alt="#"></a>
+						<h4><a href="product-details.html" onClick="clickNameProduct(this)" ip="${data[1]}">${data[2].split('|')[0]} ${data[4][0]} ${data[4][1]}</a></h4>
+						<p class="quantity">${data[5]}x - <span class="amount">${changeMoney(data[6])} <span style="text-transform: none;text-decoration: underline;">đ</span></span></p>
+					`
+					shoppingList.appendChild(html)
+					money += num
+				})
+				const totalMoneyText = document.querySelector('.totalMoney')
+				totalMoneyText.innerText = changeMoney(String(money))
+				const countTotal = document.querySelector('.countTotal')
+				countTotal.innerText = countPro
+				totalCount.innerText = countPro
+			}
+		}
+
+		function doIt(e){
+			const shoppingList = document.querySelector('.shopping-list')
+			var a = JSON.parse(localStorage.getItem('cart'))
+			var b = a.filter(item=> item[0] != e.getAttribute('ip'))
+			localStorage.setItem('cart',JSON.stringify(b))
+			shoppingList.innerHTML = ''
+			renderCart()
+		}
+
+		function clickNameProduct(e){
+			var a = e.getAttribute('ip')
+			localStorage.setItem('id',a)
+		}
+	
+		const inputSearch = document.querySelector('.searchInput')
+        const inputSearchBtn = document.querySelector('.searchBtn')
+		inputSearch.addEventListener('keydown',function(e){
+			if(e.code==='NumpadEnter'||e.code==='Enter'){
+				localStorage.setItem('search',inputSearch.getAttribute('search'))
+				localStorage.setItem('check',true)
+				window.location.href = 'search.html'
+			} 
+		})
+
+        inputSearch.oninput = function(e){
+            inputSearchBtn.setAttribute('search',inputSearch.value)
+            inputSearch.setAttribute('search',inputSearch.value)
+        }
+
+        inputSearchBtn.onclick = function(e){
+            localStorage.setItem('search',inputSearchBtn.getAttribute('search'))
+			localStorage.setItem('check',true)
+        }
+			
+
+		function changeMoney(a){
+			var c = 1;
+			var b = ''
+			for(var i=a.length-1;i>=0;i--){
+				b=a[i]+b
+				if(c%3===0 && i!==0) b=','+b
+				c++;
+			}
+			return b;
+		}
+
+		const properties = document.querySelector('.properties')
+		const more = document.querySelector('.more')
+		const hiddenIt = document.querySelector('.hidden')
+		more.onclick = function(){
+			properties.style.maxHeight = 'none'
+			more.style.display = 'none'
+			hiddenIt.style.display = 'inline-block'
+		}
+
+		hiddenIt.onclick = function(){
+			properties.style.maxHeight = null
+			more.style.display = null
+			hiddenIt.style.display = null
+		}
+
+		const cauHinh = document.querySelector('.cauHinh')
+		const modalProperties = document.querySelector('.modal__properties')
+		const closeModalBtn = document.querySelector('.modal__properties__info__btn')
+		const modalBox = document.querySelector('.modal__properties__info')
+		cauHinh.onclick = function(){
+			Object.assign(modalProperties.style,{
+				visibility: 'visible',
+				opacity: '1'
+			})
+		}
+
+		closeModalBtn.onclick = function(){
+			modalProperties.style.visibility = null
+			modalProperties.style.opacity = null
+		}
+
+		modalProperties.onclick = function(){
+			modalProperties.style.visibility = null
+			modalProperties.style.opacity = null
+		}
+
+		modalBox.onclick = function(e){
+			e.stopPropagation()
+		}
+
+		const btnCart = document.querySelector('.btnCart')
+		btnCart.onclick = function(e){
+			var money = document.querySelector('.money').getAttribute('money')
+			localStorage.setItem('total',money)
+		}
+
+		const totalBtn = document.querySelector('.animate')
+		totalBtn.onclick = function(){
+			var a = JSON.parse(localStorage.getItem('cart'))
+			var moneyTotal = 0;
+			a.forEach(data=>{
+				moneyTotal += Number(data[5])*Number(data[6])
+			})
+			localStorage.setItem('total',moneyTotal)
+		}
+
+		const messageBtn = document.querySelector('.message_btn')
+		const message = document.querySelector('.message')
+		const svg = document.querySelector('.svg')
+		const messageFrame = document.querySelector('.message__frame')
+		messageBtn.onclick = function(){
+				messageFrame.style.transition = null
+				messageFrame.style.opacity = null
+				Object.assign(message.style,{
+					height: '500px',
+					width: '350px',
+					opacity: 1,
+					backgroundColor: 'transparent',
+					cursor: 'default'
+				})
+				svg.style.visibility = 'hidden'
+				messageFrame.style.visibility = 'visible'
+		}
+
+		const bntClose = document.querySelector('.haha')
+		bntClose.onclick = function(){
+				message.style.height = null
+				message.style.width = null
+				message.style.opacity = null
+				message.style.backgroundColor = null
+				message.style.cursor = null
+				svg.style.visibility = 'visible'
+				messageFrame.style.visibility = 'hidden'
+				messageFrame.style.opacity = 0
+		}
+
+		const frameChat = document.querySelector('.message__frame__content')
+		if(JSON.parse(localStorage.getItem('message')).length !==0){
+			var a =JSON.parse(localStorage.getItem('message'))
+			a.forEach(data=>{
+				const html = `
+				<div class="boxM">
+					<div class="message__frame__content__client">
+						${data}
+					</div>
+				</div>`
+				frameChat.innerHTML += html
+			})
+		}
+
+		const inputValue = document.querySelector('.inputValue')
+		inputValue.addEventListener('keydown',function(e){
+			if(e.code==='NumpadEnter'||e.code==='Enter')
+				if(inputValue.value!==''){
+					const html = `
+					<div class="boxM">
+						<div class="message__frame__content__client">
+							${inputValue.value}
+						</div>
+					</div>`
+					frameChat.innerHTML += html
+					var a = JSON.parse(localStorage.getItem('message')).length>0 ? JSON.parse(localStorage.getItem('message')):[]
+					a.push(inputValue.value)
+					localStorage.setItem('message',JSON.stringify(a))
+					inputValue.value = ''
+				}
+		})
+
+		const btnSend = document.querySelector('.crt8y2ji')
+		btnSend.onclick = function(){
+			if(inputValue.value!==''){
+				const html = `
+				<div class="boxM">
+					<div class="message__frame__content__client">
+						${inputValue.value}
+					</div>
+				</div>`
+				frameChat.innerHTML += html
+				var a = JSON.parse(localStorage.getItem('message')).length>0 ? JSON.parse(localStorage.getItem('message')):[]
+				a.push(inputValue.value)
+				localStorage.setItem('message',JSON.stringify(a))
+				inputValue.value = ''
+			}
+		}
+
+		const btnCart1 = document.querySelector('.btnCart11')
+		btnCart1.onclick = function(){
+			var storage = document.querySelector('#storage > .js-first.click')
+			var color = document.querySelector('#color > .js-second.click')
+			var version = storage.getAttribute('storage').split('|')
+			var money = document.querySelector('.money').getAttribute('money')
+
+			var ip = JSON.parse(localStorage.getItem('ip'))
+			var infomation = JSON.parse(localStorage.getItem('infomation'))
+
+			var cart = JSON.parse(localStorage.getItem('cart'))
+			var check = false
+			cart.forEach(item => {
+				if(item[1]==JSON.parse(localStorage.getItem('id')))
+					if(item[4][0]==version[0])
+						if(item[4][1]==version[1]){
+							item[5] = Number(item[5]) + 1
+							check = true
+							return;
+						}
+			})
+			if(!check){
+				var data = [Number(ip),JSON.parse(localStorage.getItem('id')),infomation[0],infomation[1],version,1,money]
+				cart.push(data)
+				localStorage.setItem('ip',Number(ip)+1)
+			}
+			localStorage.setItem('cart',JSON.stringify(cart))
+
+			var a = JSON.parse(localStorage.getItem('cart'))
+			var moneyTotal = 0;
+			a.forEach(data=>{
+				moneyTotal += Number(data[5])*Number(data[6])
+			})
+			localStorage.setItem('total',moneyTotal)
+		}
+	</script>
+	<!-- Jquery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<!-- Popper JS -->
+	<script src="js/popper.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Color JS -->
+	<script src="js/colors.js"></script>
+	<!-- Slicknav JS -->
+	<script src="js/slicknav.min.js"></script>
+	<!-- Owl Carousel JS -->
+	<script src="js/owl-carousel.js"></script>
+	<!-- Magnific Popup JS -->
+	<script src="js/magnific-popup.js"></script>
+	<!-- Fancybox JS -->
+	<script src="js/facnybox.min.js"></script>
+	<!-- Waypoints JS -->
+	<script src="js/waypoints.min.js"></script>
+	<!-- Countdown JS -->
+	<script src="js/finalcountdown.min.js"></script>
+	<!-- Nice Select JS -->
+	<script src="js/nicesellect.js"></script>
+	<!-- Ytplayer JS -->
+	<script src="js/ytplayer.min.js"></script>
+	<!-- Flex Slider JS -->
+	<script src="js/flex-slider.js"></script>
+	<!-- ScrollUp JS -->
+	<script src="js/scrollup.js"></script>
+	<!-- Onepage Nav JS -->
+	<script src="js/onepage-nav.min.js"></script>
+	<!-- Easing JS -->
+	<script src="js/easing.js"></script>
+	<!-- Active JS -->
+	<script src="js/active.js"></script>
+</body>
+</html>
